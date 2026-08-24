@@ -1,8 +1,7 @@
-import { useState } from 'react'
-import './App.css'
-import TelaCadastro from './TelaCadastro'
-import ListaClientes from './Cliente'
-
+import { useState } from "react";
+import "./App.css";
+import TelaCadastro from "./TelaCadastro";
+import ListaClientes from "./Cliente.jsx";
 function App() {
   const [telaAtual, setTelaAtual] = useState('cadastro')
   

@@ -1,127 +1,102 @@
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
+/* Container principal com fundo preto da BarberHub */
 .container-clientes {
-  width: 100%;
-  max-width: 550px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f5f5f5;
-  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: #000000;
+  padding: 24px 20px;
+  color: #ffffff;
+  font-family: system-ui, -apple-system, sans-serif;
 }
 
+/* Cabeçalho da página */
 .header-clientes {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
-  padding: 0 10px;
+  margin-bottom: 24px;
 }
 
 .header-clientes h1 {
-  font-size: 28px;
-  color: #4a5568;
-  font-weight: 600;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #d4a359; /* Dourado característico da marca */
 }
 
 .menu-button {
-  background: none;
+  background: transparent;
   border: none;
-  font-size: 24px;
-  color: #4a5568;
+  color: #d4a359;
+  font-size: 1.8rem;
   cursor: pointer;
-  padding: 5px;
+  padding: 4px;
 }
 
-.menu-button:hover {
-  opacity: 0.7;
-}
-
+/* Lista de Clientes */
 .lista-clientes {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 16px;
 }
 
+/* Card do Cliente em Dark Mode */
 .cliente-card {
+  background-color: #0f0f0f;
+  border: 1px solid #222222;
+  border-radius: 16px;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  transition: transform 0.2s, border-color 0.2s;
 }
 
 .cliente-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-  transform: translateY(-2px);
+  border-color: #d4a359;
 }
 
 .cliente-info {
-  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .label-nome {
-  display: block;
-  font-size: 12px;
-  color: #cbd5e0;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin-bottom: 5px;
-  font-weight: 500;
+  color: #d4a359; /* Rótulo em dourado */
+  font-weight: 600;
 }
 
 .nome-cliente {
-  font-size: 16px;
-  color: #4a5568;
-  font-weight: 500;
-}
-
-.status-badge {
-  padding: 6px 16px;
-  border-radius: 20px;
-  font-size: 12px;
+  font-size: 1.1rem;
   font-weight: 600;
-  white-space: nowrap;
+  color: #ffffff;
 }
 
+/* Estilização das Badges de Status */
+.status-badge {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* Status Concluído / Confirmado em Dourado */
 .status-concluido {
-  background-color: #d4f5e6;
-  color: #22863a;
+  background-color: #d4a359;
+  color: #000000;
 }
 
+/* Status Agendado / Pendente em fundo translúcido com borda */
 .status-agendado {
-  background-color: #fff3cd;
-  color: #997404;
-}
-
-/* Responsivo */
-@media (max-width: 480px) {
-  .container-clientes {
-    padding: 15px;
-  }
-
-  .header-clientes h1 {
-    font-size: 24px;
-  }
-
-  .cliente-card {
-    padding: 15px;
-    gap: 10px;
-  }
-
-  .nome-cliente {
-    font-size: 15px;
-  }
-
-  .status-badge {
-    padding: 5px 12px;
-    font-size: 11px;
-  }
+  background-color: rgba(212, 163, 89, 0.15);
+  color: #d4a359;
+  border: 1px solid #d4a359;
 }
