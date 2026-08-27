@@ -1,4 +1,4 @@
-import Faturamento from "./faturamento";
+import Faturamento from "./index3";
 
 export default function Index() {
   return <Faturamento />;
