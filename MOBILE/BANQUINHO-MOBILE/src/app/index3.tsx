@@ -1,5 +1,5 @@
-import Index3 from "./index3";
+import Faturamento from "./faturamento";
 
-export default function Index() {
-  return <Index3 />;
+export default function Index3() {
+  return <Faturamento />;
 }
