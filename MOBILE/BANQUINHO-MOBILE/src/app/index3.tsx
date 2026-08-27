@@ -1,10 +1,5 @@
+import Faturamento from "./faturamento";
 
-import { View, Text } from "react-native";
-
-export default function Faturamento() {
-  return (
-    <View>
-      <Text>FATURAMENTO</Text>
-    </View>
-  );
+export default function Index() {
+  return <Faturamento />;
 }
