@@ -1,6 +1,6 @@
+ESSE É O TelaCadastro.jsx
 import React, { useState } from "react";
 import "./TelaCadastro.css";
-import logo from "./assets/logo.png";
 
 function TelaCadastro({ onCadastrar }) {
   const [nome, setNome] = useState("");
@@ -13,7 +13,6 @@ function TelaCadastro({ onCadastrar }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     if (senha !== confirmarSenha) {
       alert("As senhas não coincidem!");
       return;
@@ -27,7 +26,7 @@ function TelaCadastro({ onCadastrar }) {
 
     onCadastrar(novoCliente);
 
-    // Limpa o formulário depois de cadastrar
+    // limpa o formulário depois de cadastrar
     setNome("");
     setResponsavel("");
     setCPFResponsavel("");
@@ -40,30 +39,19 @@ function TelaCadastro({ onCadastrar }) {
   return (
     <div className="cadastro-page">
       <div className="cadastro-card">
-
-        {/* LOGO */}
         <div className="avatar-wrap">
           <div className="avatar">
-            <img
-              src={logo}
-              alt="Logo"
-              className="logo"
-            />
+          <img src="/assets/logo.png" alt="Logo" className="logo" />
+            
           </div>
         </div>
-
         <h2 className="cadastro-title">Cadastro</h2>
-
         <p className="cadastro-subtitle">
           Crie sua conta preenchendo os campos abaixo
         </p>
-
         <form className="cadastro-form" onSubmit={handleSubmit}>
-
-          {/* NOME COMPLETO */}
           <label className="cadastro-label">
             Nome Completo
-
             <input
               type="text"
               className="cadastro-input"
@@ -73,11 +61,8 @@ function TelaCadastro({ onCadastrar }) {
               required
             />
           </label>
-
-          {/* NOME DO RESPONSÁVEL */}
           <label className="cadastro-label">
             Nome do Responsável
-
             <input
               type="text"
               className="cadastro-input"
@@ -87,11 +72,8 @@ function TelaCadastro({ onCadastrar }) {
               required
             />
           </label>
-
-          {/* CPF */}
           <label className="cadastro-label">
             CPF do Responsável
-
             <input
               type="text"
               className="cadastro-input"
@@ -101,11 +83,8 @@ function TelaCadastro({ onCadastrar }) {
               required
             />
           </label>
-
-          {/* TELEFONE */}
           <label className="cadastro-label">
             Telefone
-
             <input
               type="tel"
               className="cadastro-input"
@@ -115,11 +94,8 @@ function TelaCadastro({ onCadastrar }) {
               required
             />
           </label>
-
-          {/* E-MAIL */}
           <label className="cadastro-label">
             E-mail
-
             <input
               type="email"
               className="cadastro-input"
@@ -129,11 +105,8 @@ function TelaCadastro({ onCadastrar }) {
               required
             />
           </label>
-
-          {/* SENHA */}
           <label className="cadastro-label">
             Senha
-
             <input
               type="password"
               className="cadastro-input"
@@ -143,11 +116,8 @@ function TelaCadastro({ onCadastrar }) {
               required
             />
           </label>
-
-          {/* CONFIRMAR SENHA */}
           <label className="cadastro-label">
             Confirmar Senha
-
             <input
               type="password"
               className="cadastro-input"
@@ -157,16 +127,166 @@ function TelaCadastro({ onCadastrar }) {
               required
             />
           </label>
-
-          {/* BOTÃO */}
           <button type="submit" className="cadastro-button">
             Cadastrar
           </button>
-
         </form>
       </div>
     </div>
   );
 }
 
-export default TelaCadastro;
+export default TelaCadastro; 
+
+ESSE É O TelaCadastro.css
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* Container principal ocupando a tela mobile inteira */
+.cadastro-page {
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  padding: 50px 16px 20px;
+}
+/* Card central em dark mode */
+.cadastro-card {
+  background: #0f0f0f;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 20px;
+  padding: 40px 20px 24px;
+  border: 1px solid #1f1f1f;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  position: relative;
+}
+/* Container para a logo da BarberHub */
+.avatar-wrap {
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.avatar {
+  width: 70px;
+  height: 70px;
+  background-color: #000000;
+  border: 2px solid #d4a359;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cadastro-title {
+  text-align: center;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #d4a359; /* Dourado característico da marca */
+  margin-top: 15px;
+}
+.cadastro-subtitle {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #a0a0a0;
+  margin-bottom: 20px;
+}
+.cadastro-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.cadastro-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: #d4a359;
+  width: 100%;
+}
+/* Inputs escuros com borda dourada fina */
+.cadastro-input {
+  width: 100%;
+  height: 46px;
+  padding: 0 14px;
+  border: 1px solid #d4a359;
+  border-radius: 10px;
+  background-color: #161616;
+  font-size: 16px;
+  color: #ffffff;
+  text-align: center;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.cadastro-input::placeholder {
+  color: #555555;
+}
+.cadastro-input:focus {
+  border-color: #f0be65;
+  box-shadow: 0 0 6px rgba(212, 163, 89, 0.4);
+}
+/* Botão principal dourado com texto escuro */
+.cadastro-button {
+  width: 100%;
+  height: 48px;
+  background-color: #d4a359;
+  color: #000000;
+  border: none;
+  border-radius: 24px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s;
+}
+.cadastro-button:active {
+  background-color: #b88a44;
+  opacity: 0.9;
+}
+APP.jsx
+import { useState } from 'react'
+import './App.css'
+import TelaCadastro from './TelaCadastro'
+import ListaClientes from './Clientes'
+
+function App() {
+  const [telaAtual, setTelaAtual] = useState('cadastro')
+  
+  // Estado que guarda a lista compartilhada de clientes
+  const [clientes, setClientes] = useState([
+    { id: 1, nome: 'Ana Paula Ferreira', status: 'Concluído' }
+  ])
+
+  // Função para adicionar um novo cliente e redirecionar
+  const adicionarCliente = (novoCliente) => {
+    setClientes((listaAnterior) => [...listaAnterior, novoCliente])
+    setTelaAtual('clientes') // Redireciona automaticamente para a lista
+  }
+
+  return (
+    <div className="app-container">
+      <nav style={{ display: 'flex', justifyContent: 'center', gap: '10px', padding: '10px' }}>
+        <button onClick={() => setTelaAtual('cadastro')}>Novo Cadastro</button>
+        <button onClick={() => setTelaAtual('clientes')}>Ver Clientes ({clientes.length})</button>
+      </nav>
+      {telaAtual === 'cadastro' ? (
+        <TelaCadastro onCadastrar={adicionarCliente} />
+      ) : (
+        <ListaClientes clientes={clientes} />
+      )}
+    </div>
+  )
+}
+
+export default App
