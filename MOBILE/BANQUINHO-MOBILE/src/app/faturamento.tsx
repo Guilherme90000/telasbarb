@@ -1,16 +1,12 @@
 import React from "react";
-import {
-  View,
-  Text,
-  Pressable,
-  StyleSheet,
-  ScrollView,
+import { View, Text, Pressable, StyleSheet, ScrollView,
+  
 } from "react-native";
 
 export default function Faturamento() {
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      
+
       {/* Título */}
       <Text style={styles.titulo}>FATURAMENTO</Text>
 
